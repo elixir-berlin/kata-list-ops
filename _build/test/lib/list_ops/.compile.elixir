@@ -1,5 +1,0 @@
-v2.
-{<<"_build/test/lib/list_ops/ebin/Elixir.ListOps.beam">>,'Elixir.ListOps',
- module,<<"lib/list_ops.ex">>,
- ['Elixir.Kernel'],
- [],[],nil}.
