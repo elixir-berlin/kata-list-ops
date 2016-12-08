@@ -2,7 +2,7 @@ defmodule ListOps do
     def count(l), do: count(l, 0)
 
     defp count([], acc), do: acc
-    defp count([h|t], acc), do: count(t, acc+1)
+    defp count([_|t], acc), do: count(t, acc+1)
 
     def reverse(l), do: reverse(l, [])
 
