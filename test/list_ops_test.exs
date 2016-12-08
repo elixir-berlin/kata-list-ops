@@ -1,8 +1,6 @@
 defmodule ListOpsTest do
   use ExUnit.Case
 
-  defp odd?(n), do: rem(n, 2) == 1
-
   test "count of empty list" do
     assert ListOps.count([]) == 0
   end
