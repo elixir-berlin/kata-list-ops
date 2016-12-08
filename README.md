@@ -1,4 +1,4 @@
-# Aprils Edition - ListOps
+# Kata - ListOps
 
 coding challenge repo for hh.ex april edition
 
