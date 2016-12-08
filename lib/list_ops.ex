@@ -7,6 +7,22 @@ defmodule ListOps do
     1 + count(tail)
   end
 
+  def map([], _) do
+    []
+  end
+
+  def map(list, block) do
+    map(list, [], block)
+  end
+
+  defp map([], mapped_list, _) do
+    reverse(mapped_list)
+  end
+
+  defp map([head | tail], mapped_list, block) do
+    map(tail, [block.(head) | mapped_list], block)
+  end
+
   def reverse(list) do
     reverse(list, [])
   end
