@@ -30,4 +30,5 @@ defmodule ListOps do
 
     def append(l1, l2), do: reduce(reverse(l1), l2, &([&1|&2]))
 
+    def concat(l), do: reduce(reverse(l), [], &append/2)
 end
