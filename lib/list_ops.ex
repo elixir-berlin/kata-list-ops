@@ -13,4 +13,15 @@ defmodule ListOps do
 
     defp map([], _, acc), do: reverse(acc)
     defp map([h|t], f, acc), do: map(t, f, [f.(h)|acc])
+
+    def filter(l, f), do: filter(l, f, [])
+
+    defp filter([], _, acc), do: reverse(acc)
+    defp filter([h|t], f, acc) do
+        if f.(h) do
+            filter(t, f, [h|acc])
+        else
+            filter(t, f, acc)
+        end
+    end
 end
