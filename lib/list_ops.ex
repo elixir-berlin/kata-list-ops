@@ -27,4 +27,7 @@ defmodule ListOps do
 
     def reduce([], acc, _), do: acc
     def reduce([h|t], acc, f), do: reduce(t, f.(h, acc), f)
+
+    def append(l1, l2), do: reduce(reverse(l1), l2, &([&1|&2]))
+
 end
