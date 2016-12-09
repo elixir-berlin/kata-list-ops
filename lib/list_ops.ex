@@ -11,11 +11,11 @@ defmodule ListOps do
     reverse(list, [])
   end
 
-  def reverse([], acumulator) do
+  defp reverse([], acumulator) do
     acumulator
   end
 
-  def reverse([head | tail], acumulator) do
+  defp reverse([head | tail], acumulator) do
     reverse(tail, [head | acumulator])
   end
 end
