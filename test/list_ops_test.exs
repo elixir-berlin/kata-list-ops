@@ -52,23 +52,23 @@ defmodule ListOpsTest do
     assert ListOps.filter(Enum.to_list(1..1_000_000), &odd?/1) ==
       Enum.map(1..500_000, &(&1*2-1))
   end
-  #
-  # test "reduce of empty list" do
-  #   assert ListOps.reduce([], 0, &(&1+&2)) == 0
-  # end
-  #
-  # test "reduce of normal list" do
-  #   assert ListOps.reduce([1,2,3,4], -3, &(&1+&2)) == 7
-  # end
-  #
-  # test "reduce of huge list" do
-  #   assert ListOps.reduce(Enum.to_list(1..1_000_000), 0, &(&1+&2)) ==
-  #     Enum.reduce(1..1_000_000, 0, &(&1+&2))
-  # end
-  #
-  # test "reduce with non-commutative function" do
-  #   assert ListOps.reduce([1,2,3,4], 10, fn x, acc -> acc - x end) == 0
-  # end
+
+  test "reduce of empty list" do
+    assert ListOps.reduce([], 0, &(&1+&2)) == 0
+  end
+
+  test "reduce of normal list" do
+    assert ListOps.reduce([1,2,3,4], -3, &(&1+&2)) == 7
+  end
+
+  test "reduce of huge list" do
+    assert ListOps.reduce(Enum.to_list(1..1_000_000), 0, &(&1+&2)) ==
+      Enum.reduce(1..1_000_000, 0, &(&1+&2))
+  end
+
+  test "reduce with non-commutative function" do
+    assert ListOps.reduce([1,2,3,4], 10, fn x, acc -> acc - x end) == 0
+  end
   #
   # test "append of empty lists" do
   #   assert ListOps.append([], []) == []
